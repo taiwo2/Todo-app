@@ -1,3 +1,6 @@
+import displayController from '../displayController';
+import project from './project';
+
 const createProject = () => {
     const addProjectInputContainer = document.getElementById(
       'add-project-input-container'
