@@ -1,3 +1,9 @@
+import deleteTask from './todo/deleteTask';
+import viewTask from './todo/viewTask';
+import completedTask from './todo/completedTask';
+import storage from './storage';
+import removeProject from './project/removeProject';
+import editTask from './todo/edit';
 import editProject from './project/editProject';
 const format = require('date-fns/format');
 

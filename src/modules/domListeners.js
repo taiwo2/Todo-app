@@ -1,5 +1,5 @@
 import displayController from './displayController';
-import addTask from './task/addTask';
+import addTask from './todo/addTask';
 
 
 const domListeners = () => {

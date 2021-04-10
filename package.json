@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack --mode development",
     "build": "webpack --mode production",
     "start": "webpack serve --mode development --open"
@@ -21,6 +20,7 @@
   "homepage": "https://github.com/taiwo2/Todo-app#readme",
   "devDependencies": {
     "webpack": "^5.31.0",
-    "webpack-cli": "^4.6.0"
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }
