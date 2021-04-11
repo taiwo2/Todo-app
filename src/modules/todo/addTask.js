@@ -33,10 +33,11 @@ const addTask = (e) => {
     createTaskTitle,
     createTaskDescription,
     date,
-    createTaskProject);
+    createTaskProject,
+  );
 
   displayController.addTask.insertAdjacentHTML(
-    'beforebegin',
+    'beforebegin', 
     `
     <div class="task" data-id="${newTask.id}">
       <div class="task-group">

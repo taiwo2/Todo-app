@@ -26,7 +26,8 @@ const createProject = () => {
         <i class="far fa-trash-alt delete-project"></i>
       </div>
     </div>
-    `);
+    `
+  );
 
   addProjectInputContainer.style.display = 'none';
   addProject.style.display = 'flex';

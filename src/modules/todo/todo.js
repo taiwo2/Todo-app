@@ -6,6 +6,7 @@ function task(id, title, description, dueDate, project) {
     dueDate,
     project,
     checked: false};
+
 }
 
 export default task;
