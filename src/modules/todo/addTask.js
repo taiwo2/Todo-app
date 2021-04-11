@@ -55,8 +55,7 @@ const addTask = (e) => {
         </div>
         <p class="due-date">${newTask.dueDate}</p>
       </div>
-    </div> 
-    `
+    </div> `,
   );
 
   // Creates the project if it doesn't exist
@@ -82,8 +81,7 @@ const addTask = (e) => {
           <i class="far fa-edit edit-project-button"></i>
           <i class="far fa-trash-alt delete-project"></i>
         </div>
-      </div>
-      `
+      </div>`,
     );
 
     displayController.addToProjectArr(newProject);

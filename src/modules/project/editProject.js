@@ -29,7 +29,7 @@ const editProject = (() => {
     });
   };
 
-  const exitProjectEditHandler = id) => {
+  const exitProjectEditHandler = (id) => {
     const exitProjectEdit = document.getElementById('exit-project-edit');
     const project = document.querySelector(`[data-id="${id}"]`);
     const element = project;
