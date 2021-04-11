@@ -17,7 +17,8 @@ const addTask = (e) => {
       .toString(16)
       .substring(1);
   }
-  const taskId = s4() + '-' + s4() + '-' + s4();
+
+  const taskId = `${s4()} + '-' + ${s4()} + '-' + ${s4()}`;
 
   const year = createTaskDate.slice(0, 4);
   const month = parseInt(createTaskDate.slice(5, 7)) - 1;
@@ -31,7 +32,8 @@ const addTask = (e) => {
     createTaskTitle,
     createTaskDescription,
     date,
-    createTaskProject);
+    createTaskProject
+    );
 
   displayController.addTask.insertAdjacentHTML(
     'beforebegin',
@@ -52,7 +54,8 @@ const addTask = (e) => {
         </div>
         <p class="due-date">${newTask.dueDate}</p>
       </div>
-    </div> `);
+    </div> `
+    );
 
   // Creates the project if it doesn't exist
   const projectArr = [];
@@ -61,16 +64,17 @@ const addTask = (e) => {
     projectArr.push(displayController.myProjects[i].title.toLowerCase());
   }
 
-  if (projectArr.indexOf(createTaskProject.toLowerCase()) < 0 &&createTaskProject !== '') {
+  if (projectArr.indexOf(createTaskProject.toLowerCase()) < 0 && createTaskProject !== '') {
     const addProjectInputContainer = document.getElementById('add-project-input-container');
 
-    const projectId = s4() + '-' + s4() + '-' + s4();
+    const projectId = `${s4()} + '-' + ${s4()} + '-' + ${s4()}`;
 
     const newProject = project(projectId, createTaskProject);
 
     addProjectInputContainer.insertAdjacentHTML(
       'beforebegin',
-      `<div class="project-group project-hover" data-id="${newProject.id}">
+      `
+      <div class="project-group project-hover" data-id="${newProject.id}">
         <h3 class="project">${newProject.title}</h3>
         <div class="task-buttons">
           <i class="far fa-edit edit-project-button"></i>

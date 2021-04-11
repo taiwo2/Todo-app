@@ -1,9 +1,6 @@
 function project(id, title) {
   return {
-    id,
-    title
-  };
+    id, title };
 }
-  
+
 export default project;
-  

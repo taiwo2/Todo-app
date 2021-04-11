@@ -13,8 +13,7 @@ const filterTask = (e) => {
     const checkbox = document.querySelectorAll('.checkbox');
     for (let i = 0; i < checkbox.length; i += 1) {
       checkbox[i].addEventListener('click', (e) => {
-        const target = e.target;
-        const parent = target.parentElement.parentElement;
+        const parent = e.target.parentElement.parentElement;
         const completed = target.checked ? 'checked' : false;
         const taskId = parent.getAttribute('data-id');
 
@@ -59,8 +58,9 @@ const filterTask = (e) => {
           </div>
           <p class="due-date">${filterArr[i].dueDate}</p>
         </div>
-      </div>`
-  );
+      </div>
+      `
+    );
 
     checkHandler();
     completedTask();

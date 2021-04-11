@@ -5,10 +5,9 @@ const viewTask = (e) => {
   const viewTaskDescription = document.getElementById('view-task-description');
   const viewDueDate = document.getElementById('view-due-date');
   const viewProject = document.getElementById('view-project');
-  const target = e.target;
-  const parent = target.parentElement.parentElement;
+  const parent = e.target.parentElement.parentElement;
   const objId = parent.getAttribute('data-id');
-  const taskObj = displayController.myTasks.filter(e => e.id === objId);
+  const taskObj = displayController.myTasks.filter((e) => e.id === objId);
 
   viewTaskTitle.textContent = taskObj[0].title;
   viewTaskDescription.textContent = taskObj[0].description;
@@ -21,7 +20,7 @@ const viewTask = (e) => {
 
   // Edit Task
   const editButton = document.getElementById('edit-button');
-  editButton.addEventListener('click', d => {
+  editButton.addEventListener('click', (d) => {
     const editTaskModal = d.document.getElementById('edit-task-modal');
     const editTaskTitle = document.getElementById('edit-task-title');
     const editTaskDescription = document.getElementById('edit-task-description');

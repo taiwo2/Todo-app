@@ -9,7 +9,7 @@ const storage = (() => {
     localStorage.setItem('myProjects', JSON.stringify(displayController.myProjects));
   };
 
-  const deleteFromLocal = taskId => {
+  const deleteFromLocal = (taskId) => {
     localStorage.removeItem(`${taskId}`);
   };
 
