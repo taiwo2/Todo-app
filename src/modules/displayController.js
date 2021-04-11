@@ -6,6 +6,7 @@ import removeProject from './project/removeProject';
 import filterTask from './project/filterTask';
 import editTask from './todo/edit';
 import editProject from './project/editProject';
+
 const format = require('date-fns/format');
 
 const displayController = (() => {
