@@ -37,7 +37,7 @@ const addTask = (e) => {
   );
 
   displayController.addTask.insertAdjacentHTML(
-    'beforebegin', 
+    'beforebegin',
     `
     <div class="task" data-id="${newTask.id}">
       <div class="task-group">
