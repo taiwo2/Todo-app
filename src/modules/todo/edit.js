@@ -1,5 +1,3 @@
-import displayController from '../displayController';
-
 const editTask = e => {
   const editTaskModal = document.getElementById('edit-task-modal');
   const editTaskTitle = document.getElementById('edit-task-title');

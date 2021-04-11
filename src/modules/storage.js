@@ -2,14 +2,11 @@ import displayController from './displayController';
 
 const storage = (() => {
   const saveToLocal = () => {
-    localStorage.setItem(`myTasks`, JSON.stringify(displayController.myTasks));
+    localStorage.setItem('myTasks', JSON.stringify(displayController.myTasks));
   };
 
   const saveProjectToLocal = () => {
-    localStorage.setItem(
-      `myProjects`,
-      JSON.stringify(displayController.myProjects)
-    );
+    localStorage.setItem('myProjects', JSON.stringify(displayController.myProjects));
   };
 
   const deleteFromLocal = taskId => {

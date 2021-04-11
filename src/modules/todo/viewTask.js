@@ -1,5 +1,3 @@
-import displayController from '../displayController';
-
 const viewTask = (e) => {
   const viewTaskTitle = document.getElementById('view-task-title');
   const viewTaskDescription = document.getElementById('view-task-description');
@@ -22,11 +20,9 @@ const viewTask = (e) => {
   // Edit Task
   const editButton = document.getElementById('edit-button');
   editButton.addEventListener('click', d => {
-    const editTaskModal = document.getElementById('edit-task-modal');
+    const editTaskModal = d.document.getElementById('edit-task-modal');
     const editTaskTitle = document.getElementById('edit-task-title');
-    const editTaskDescription = document.getElementById(
-      'edit-task-description'
-    );
+    const editTaskDescription = document.getElementById('edit-task-description');
     const editTaskDate = document.getElementById('edit-task-date');
     const editTaskProject = document.getElementById('edit-task-project');
 
@@ -49,7 +45,7 @@ const viewTask = (e) => {
   // Exit modal
   const viewCancelButton = document.getElementById('view-cancel-button');
   viewCancelButton.addEventListener('click', (e) => {
-    viewTaskModal.style.display = 'none';
+    e.viewTaskModal.style.display = 'none';
   });
 };
 

@@ -1,5 +1,5 @@
 import storage from '../storage';
-import displayController from '../displayController';
+// import displayController from '../displayController';
 
 const editProject = (() => {
   const submitProjectEditHandler = id => {
@@ -38,7 +38,7 @@ const editProject = (() => {
 
     exitProjectEdit.addEventListener('click', (e) => {
       element.outerHTML = `
-      <div class="project-group project-hover" data-id="${id}">
+      <div class="project-group project-hover" data-id="${e.id}">
         <h3 class="project">${projectObj[0].title}</h3>
         <div class="task-buttons">
           <i class="far fa-edit edit-project-button"></i>

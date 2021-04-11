@@ -1,18 +1,17 @@
 import task from './todo';
-import displayController from '../displayController';
+
+// import displayController from '../displayController';
+
 import storage from '../storage';
 import project from '../project/project';
 const format = require('date-fns/format');
 
-const addTask = e => {
+const addTask = (e) => {
   e.preventDefault();
   const createTaskTitle = document.getElementById('create-task-title').value;
-  const createTaskDescription = document.getElementById(
-    'create-task-description'
-  ).value;
+  const createTaskDescription = document.getElementById('create-task-description').value;
   const createTaskDate = document.getElementById('create-task-date').value;
-  const createTaskProject = document.getElementById('create-task-project')
-    .value;
+  const createTaskProject = document.getElementById('create-task-project').value;
 
   // Generate random ID
   function s4() {
@@ -34,8 +33,7 @@ const addTask = e => {
     createTaskTitle,
     createTaskDescription,
     date,
-    createTaskProject
-  );
+    createTaskProject);
 
   displayController.addTask.insertAdjacentHTML(
     'beforebegin',
@@ -56,14 +54,12 @@ const addTask = e => {
         </div>
         <p class="due-date">${newTask.dueDate}</p>
       </div>
-    </div>
-  `
-  );
+    </div> `);
 
   // Creates the project if it doesn't exist
   const projectArr = [];
 
-  for (let i = 0; i < displayController.myProjects.length; i++) {
+  for (let i = 0; i < displayController.myProjects.length; i += 1) {
     projectArr.push(displayController.myProjects[i].title.toLowerCase());
   }
 
@@ -71,9 +67,7 @@ const addTask = e => {
     projectArr.indexOf(createTaskProject.toLowerCase()) < 0 &&
     createTaskProject !== ''
   ) {
-    const addProjectInputContainer = document.getElementById(
-      'add-project-input-container'
-    );
+    const addProjectInputContainer = document.getElementById('add-project-input-container');
 
     const projectId = s4() + '-' + s4() + '-' + s4();
 
@@ -81,16 +75,13 @@ const addTask = e => {
 
     addProjectInputContainer.insertAdjacentHTML(
       'beforebegin',
-      `
-      <div class="project-group project-hover" data-id="${newProject.id}">
+      `<div class="project-group project-hover" data-id="${newProject.id}">
         <h3 class="project">${newProject.title}</h3>
         <div class="task-buttons">
           <i class="far fa-edit edit-project-button"></i>
           <i class="far fa-trash-alt delete-project"></i>
         </div>
-      </div>
-      `
-    );
+      </div> `);
 
     displayController.addToProjectArr(newProject);
     storage.saveProjectToLocal();

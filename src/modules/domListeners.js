@@ -11,11 +11,11 @@ const domListeners = () => {
 
   // Add Task
   displayController.addTask.addEventListener('click', (e) => {
-    displayController.createTaskModal.style.display = 'flex';
+    e.displayController.createTaskModal.style.display = 'flex';
   });
 
   displayController.cancelButton.addEventListener('click', (e) => {
-    displayController.createTaskModal.style.display = 'none';
+    e.displayController.createTaskModal.style.display = 'none';
   });
 
   displayController.createTaskForm.addEventListener('submit', addTask);
