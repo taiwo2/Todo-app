@@ -22,7 +22,7 @@ const addTask = (e) => {
   const taskId = `${s4()} + '-' + ${s4()} + '-' + ${s4()}`;
 
   const year = createTaskDate.slice(0, 4);
-  const month = parseInt(createTaskDate.slice(5, 7),10);
+  const month = parseInt(createTaskDate.slice(5, 7), 10);
   const day = createTaskDate.slice(8);
 
   const date = format(new Date(year, month, day), 'MM-dd-yyyy');
@@ -33,8 +33,7 @@ const addTask = (e) => {
     createTaskTitle,
     createTaskDescription,
     date,
-    createTaskProject
-  );
+    createTaskProject);
 
   displayController.addTask.insertAdjacentHTML(
     'beforebegin',
@@ -55,7 +54,8 @@ const addTask = (e) => {
         </div>
         <p class="due-date">${newTask.dueDate}</p>
       </div>
-    </div> `
+    </div> 
+    `
   );
 
   // Creates the project if it doesn't exist
@@ -81,7 +81,8 @@ const addTask = (e) => {
           <i class="far fa-edit edit-project-button"></i>
           <i class="far fa-trash-alt delete-project"></i>
         </div>
-      </div>`
+      </div>
+      `
     );
 
     displayController.addToProjectArr(newProject);

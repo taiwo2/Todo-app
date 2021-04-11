@@ -10,7 +10,7 @@ const createProject = () => {
   // Generate random ID
   function s4() {
     return Math.floor((1 + Math.random()) * 0x1000).toString(16).substring(1);
-  };
+  }
 
   const projectId = `${s4()} + '-' + ${s4()} + '-' + ${s4()}`;
 
@@ -25,8 +25,8 @@ const createProject = () => {
         <i class="far fa-edit edit-project-button"></i>
         <i class="far fa-trash-alt delete-project"></i>
       </div>
-    </div>`
-  );
+    </div>
+    `);
 
   addProjectInputContainer.style.display = 'none';
   addProject.style.display = 'flex';
