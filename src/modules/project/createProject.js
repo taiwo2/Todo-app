@@ -25,8 +25,7 @@ const createProject = () => {
         <i class="far fa-edit edit-project-button"></i>
         <i class="far fa-trash-alt delete-project"></i>
       </div>
-    </div>
-    `
+    </div>`,
   );
 
   addProjectInputContainer.style.display = 'none';

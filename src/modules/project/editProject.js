@@ -29,12 +29,12 @@ const editProject = (() => {
     });
   };
 
-  const exitProjectEditHandler = (id) => {
+  const exitProjectEditHandler = id) => {
     const exitProjectEdit = document.getElementById('exit-project-edit');
     const project = document.querySelector(`[data-id="${id}"]`);
     const element = project;
     const getObj = JSON.parse(localStorage.getItem('myProjects'));
-    const projectObj = getObj.filter(e) => e.id === id);
+    const projectObj = getObj.filter((e) => e.id === id);
 
     exitProjectEdit.addEventListener('click', (e) => {
       element.outerHTML = `
