@@ -1,7 +1,5 @@
 import task from './todo';
-
-// import displayController from '../displayController';
-
+import displayController from '../displayController';
 import storage from '../storage';
 import project from '../project/project';
 const format = require('date-fns/format');

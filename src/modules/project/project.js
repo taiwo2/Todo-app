@@ -5,5 +5,4 @@ function project(id, title) {
   };
 }
   
-  export default project;
-  
+export default project;

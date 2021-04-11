@@ -9,4 +9,4 @@ function task(id, title, description, dueDate, project) {
   };
 }
 
-  export default task;
+export default task;

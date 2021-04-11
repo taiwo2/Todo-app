@@ -1,5 +1,5 @@
 import displayController from '../displayController';
-// import completedTask from '../todo/completedTask';
+import completedTask from '../todo/completedTask';
 import storage from '../storage';
 
 const filterTask = (e) => {

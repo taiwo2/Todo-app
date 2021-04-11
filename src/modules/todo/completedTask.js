@@ -1,5 +1,5 @@
 const completedTask = () => {
-    const checkbox = document.querySelectorAll('.checkbox');
+  const checkbox = document.querySelectorAll('.checkbox');
 
   for (let i = 0; i < checkbox.length; i += 1) {
     if (checkbox[i].checked) {
@@ -10,6 +10,6 @@ const completedTask = () => {
       parent.classList.remove('complete');
     }
     }
-  };
+};
 
-export default completedTask;  
+export default completedTask;

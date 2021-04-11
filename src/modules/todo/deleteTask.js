@@ -1,4 +1,4 @@
-// import displayController from '../displayController';
+import displayController from '../displayController';
 import storage from '../storage';
 
 
