@@ -9,7 +9,7 @@ const completedTask = () => {
       const parent = checkbox[i].parentElement.parentElement;
       parent.classList.remove('complete');
     }
-    }
+  }
 };
 
 export default completedTask;

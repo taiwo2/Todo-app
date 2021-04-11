@@ -2,6 +2,7 @@ import task from './todo';
 import displayController from '../displayController';
 import storage from '../storage';
 import project from '../project/project';
+
 const format = require('date-fns/format');
 
 const addTask = (e) => {
@@ -21,7 +22,7 @@ const addTask = (e) => {
   const taskId = `${s4()} + '-' + ${s4()} + '-' + ${s4()}`;
 
   const year = createTaskDate.slice(0, 4);
-  const month = parseInt(createTaskDate.slice(5, 7)) - 1;
+  const month = parseInt(createTaskDate.slice(5, 7),10);
   const day = createTaskDate.slice(8);
 
   const date = format(new Date(year, month, day), 'MM-dd-yyyy');
@@ -33,7 +34,7 @@ const addTask = (e) => {
     createTaskDescription,
     date,
     createTaskProject
-    );
+  );
 
   displayController.addTask.insertAdjacentHTML(
     'beforebegin',
@@ -55,7 +56,7 @@ const addTask = (e) => {
         <p class="due-date">${newTask.dueDate}</p>
       </div>
     </div> `
-    );
+  );
 
   // Creates the project if it doesn't exist
   const projectArr = [];
@@ -80,7 +81,7 @@ const addTask = (e) => {
           <i class="far fa-edit edit-project-button"></i>
           <i class="far fa-trash-alt delete-project"></i>
         </div>
-      </div> `
+      </div>`
     );
 
     displayController.addToProjectArr(newProject);

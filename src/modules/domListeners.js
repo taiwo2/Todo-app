@@ -22,8 +22,8 @@ const domListeners = () => {
 
   // Add Project
   displayController.addProject.addEventListener('click', (e) => {
-    e.addProjectInputContainer.style.display = 'flex';
-    addProject.style.display = 'none';
+    addProjectInputContainer.style.display = 'flex';
+    e.addProject.style.display = 'none';
   });
 
   faCheck.addEventListener('click', createProject);

@@ -58,8 +58,7 @@ const filterTask = (e) => {
           </div>
           <p class="due-date">${filterArr[i].dueDate}</p>
         </div>
-      </div>
-      `
+      </div>`
     );
 
     checkHandler();
