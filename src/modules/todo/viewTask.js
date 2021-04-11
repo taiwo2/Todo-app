@@ -20,8 +20,8 @@ const viewTask = (e) => {
 
   // Edit Task
   const editButton = document.getElementById('edit-button');
-  editButton.addEventListener('click', (d) => {
-    const editTaskModal = d.document.getElementById('edit-task-modal');
+  editButton.addEventListener('click', () => {
+    const editTaskModal = document.getElementById('edit-task-modal');
     const editTaskTitle = document.getElementById('edit-task-title');
     const editTaskDescription = document.getElementById('edit-task-description');
     const editTaskDate = document.getElementById('edit-task-date');
@@ -46,7 +46,7 @@ const viewTask = (e) => {
   // Exit modal
   const viewCancelButton = document.getElementById('view-cancel-button');
   viewCancelButton.addEventListener('click', (e) => {
-    e.viewTaskModal.style.display = 'none';
+    viewTaskModal.style.display = 'none';
   });
 };
 

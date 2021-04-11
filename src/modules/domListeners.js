@@ -10,20 +10,20 @@ const domListeners = () => {
   const editTaskModal = document.getElementById('edit-task-modal');
 
   // Add Task
-  displayController.addTask.addEventListener('click', (e) => {
-    e.displayController.createTaskModal.style.display = 'flex';
+  displayController.addTask.addEventListener('click', () => {
+    displayController.createTaskModal.style.display = 'flex';
   });
 
-  displayController.cancelButton.addEventListener('click', (e) => {
-    e.displayController.createTaskModal.style.display = 'none';
+  displayController.cancelButton.addEventListener('click', () => {
+    displayController.createTaskModal.style.display = 'none';
   });
 
   displayController.createTaskForm.addEventListener('submit', addTask);
 
   // Add Project
-  displayController.addProject.addEventListener('click', (e) => {
+  displayController.addProject.addEventListener('click', () => {
     addProjectInputContainer.style.display = 'flex';
-    e.addProject.style.display = 'none';
+    addProject.style.display = 'none';
   });
 
   faCheck.addEventListener('click', createProject);
