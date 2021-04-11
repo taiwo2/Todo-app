@@ -2,7 +2,7 @@ import storage from '../storage';
 // import displayController from '../displayController';
 
 const editProject = (() => {
-  const submitProjectEditHandler = id => {
+  const submitProjectEditHandler = (id) => {
     const editProjectInput = document.getElementById('edit-project-input');
     const submitProjectEdit = document.getElementById('submit-project-edit');
 
@@ -29,7 +29,7 @@ const editProject = (() => {
     });
   };
 
-  const exitProjectEditHandler = id => {
+  const exitProjectEditHandler = (id) => {
     const exitProjectEdit = document.getElementById('exit-project-edit');
     const project = document.querySelector(`[data-id="${id}"]`);
     const element = project;

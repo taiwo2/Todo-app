@@ -121,7 +121,7 @@ const displayController = (() => {
   let editId;
 
   const loadTask = () => {
-    for (let i = 0; i < myTasks.length; i +=1) {
+    for (let i = 0; i < myTasks.length; i += 1) {
       addTask.insertAdjacentHTML(
         'beforebegin',
         `
@@ -141,7 +141,8 @@ const displayController = (() => {
             </div>
             <p class="due-date">${myTasks[i].dueDate}</p>
           </div>
-        </div>`);
+        </div>`
+      );
     }
   };
 
@@ -158,18 +159,17 @@ const displayController = (() => {
             <i class="far fa-edit edit-project-button"></i>
             <i class="far fa-trash-alt delete-project"></i>
           </div>
-        </div>
-        `
+        </div>`
       );
     }
   };
 
 
-  const addToProjectArr = project => {
+  const addToProjectArr = (project) => {
     myProjects.push(project);
   };
 
-  const removeProjectFromArr = projectId => {
+  const removeProjectFromArr = (projectId) => {
     for (let i = 0; i < myProjects.length; i += 1) {
       if (myProjects[i].id === projectId) {
         myProjects.splice(i, 1);
@@ -223,7 +223,7 @@ const displayController = (() => {
   const displayProjectButtonsOnHover = () => {
     const projectHover = document.querySelectorAll('.project-hover');
     for (let i = 0; i < projectHover.length; i += 1) {
-      projectHover[i].addEventListener('mouseenter', e => {
+      projectHover[i].addEventListener('mouseenter', (e) => {
         const target = e.target;
         const child = target.lastElementChild;
         child.style.display = 'flex';
@@ -231,7 +231,7 @@ const displayController = (() => {
     }
 
     for (let i = 0; i < projectHover.length; i += 1) {
-      projectHover[i].addEventListener('mouseleave', e => {
+      projectHover[i].addEventListener('mouseleave', (e) => {
         const target = e.target;
         const child = target.lastElementChild;
         child.style.display = 'none';
@@ -241,11 +241,11 @@ const displayController = (() => {
 
   // Task functions
 
-  const addToTaskArr = taskObj => {
+  const addToTaskArr = (taskObj) => {
     myTasks.push(taskObj);
   };
 
-  const removeTaskFromArr = taskId => {
+  const removeTaskFromArr = (taskId) => {
     for (let i = 0; i < myTasks.length; i += 1) {
       if (myTasks[i].id === taskId) {
         myTasks.splice(i, 1);
@@ -269,7 +269,7 @@ const displayController = (() => {
 
   const checkHandler = () => {
     const checkbox = document.querySelectorAll('.checkbox');
-    for (let i = 0; i < checkbox.length; i++) {
+    for (let i = 0; i < checkbox.length; i += 1) {
       checkbox[i].addEventListener('click', (e) => {
         const target = e.target;
         const parent = target.parentElement.parentElement;
@@ -287,16 +287,14 @@ const displayController = (() => {
     }
   };
 
-  const updateEditId = id => {
+  const updateEditId = (id) => {
     editId = id;
   };
 
   editTaskForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const editTaskTitle = document.getElementById('edit-task-title');
-    const editTaskDescription = document.getElementById(
-      'edit-task-description'
-    );
+    const editTaskDescription = document.getElementById('edit-task-description');
     const editTaskDate = document.getElementById('edit-task-date');
     const editTaskProject = document.getElementById('edit-task-project');
 
@@ -311,8 +309,8 @@ const displayController = (() => {
       editTaskTitle.value,
       editTaskDescription.value,
       date,
-      editTaskProject.value
-    );
+      editTaskProject.value);
+    
     storage.saveToLocal();
     editTaskModal.style.display = 'none';
 
@@ -357,7 +355,7 @@ const displayController = (() => {
       });
     }
 
-    for (let i = 0; i < task.length; i +=1) {
+    for (let i = 0; i < task.length; i += 1) {
       task[i].addEventListener('mouseleave', (e) => {
         const target = e.target;
         const child = target.lastElementChild.firstElementChild;
@@ -369,19 +367,19 @@ const displayController = (() => {
   const projectHandler = () => {
     const project = document.querySelectorAll('.project');
     const allProject = document.getElementById('all-project');
-  
+
     allProject.addEventListener('click', (e) => {
       const task = document.querySelectorAll('.task');
       const target = e.target;
       for (let i = 0; i < task.length; i++) {
         task[i].remove();
       }
-  
+
       for (let i = 0; i < project.length; i += 1) {
         project[i].style.color = '#333333';
       }
       target.style.color = '#262626';
-  
+
       loadTask();
       trashHandler();
       viewTaskHandler();
@@ -390,7 +388,7 @@ const displayController = (() => {
       editTaskHandler();
       displayTaskButtonsOnHover();
     });
-  
+
     for (let i = 0; i < project.length; i += 1) {
       project[i].addEventListener('click', filterTask);
     }

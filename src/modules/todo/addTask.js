@@ -61,10 +61,7 @@ const addTask = (e) => {
     projectArr.push(displayController.myProjects[i].title.toLowerCase());
   }
 
-  if (
-    projectArr.indexOf(createTaskProject.toLowerCase()) < 0 &&
-    createTaskProject !== ''
-  ) {
+  if (projectArr.indexOf(createTaskProject.toLowerCase()) < 0 &&createTaskProject !== '') {
     const addProjectInputContainer = document.getElementById('add-project-input-container');
 
     const projectId = s4() + '-' + s4() + '-' + s4();
@@ -79,7 +76,8 @@ const addTask = (e) => {
           <i class="far fa-edit edit-project-button"></i>
           <i class="far fa-trash-alt delete-project"></i>
         </div>
-      </div> `);
+      </div> `
+    );
 
     displayController.addToProjectArr(newProject);
     storage.saveProjectToLocal();

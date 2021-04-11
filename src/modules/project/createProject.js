@@ -17,24 +17,25 @@ const createProject = () => {
   const newProject = project(projectId, addProjectInput);
 
   addProjectInputContainer.insertAdjacentHTML(
-      'beforebegin',
-      `
+    'beforebegin',
+    `
     <div class="project-group project-hover" data-id="${newProject.id}">
       <h3 class="project">${newProject.title}</h3>
       <div class="task-buttons">
         <i class="far fa-edit edit-project-button"></i>
         <i class="far fa-trash-alt delete-project"></i>
       </div>
-    </div>`);
-  
-addProjectInputContainer.style.display = 'none';
-addProject.style.display = 'flex';
-displayController.addToProjectArr(newProject);
-storage.saveProjectToLocal();
-displayController.projectTrashHandler();
-displayController.projectHandler();
-displayController.editProjectHandler();
-displayController.displayProjectButtonsOnHover();
+    </div>`
+  );
+
+  addProjectInputContainer.style.display = 'none';
+  addProject.style.display = 'flex';
+  displayController.addToProjectArr(newProject);
+  storage.saveProjectToLocal();
+  displayController.projectTrashHandler();
+  displayController.projectHandler();
+  displayController.editProjectHandler();
+  displayController.displayProjectButtonsOnHover();
 };
-  
+
 export default createProject;

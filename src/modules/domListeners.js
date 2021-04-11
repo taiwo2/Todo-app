@@ -22,7 +22,7 @@ const domListeners = () => {
 
   // Add Project
   displayController.addProject.addEventListener('click', (e) => {
-    addProjectInputContainer.style.display = 'flex';
+    e.addProjectInputContainer.style.display = 'flex';
     addProject.style.display = 'none';
   });
 
