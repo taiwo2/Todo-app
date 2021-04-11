@@ -29,7 +29,7 @@ const domListeners = () => {
   faCheck.addEventListener('click', createProject);
 
   faBan.addEventListener('click', (e) => {
-    addProjectInputContainer.style.display = 'none';
+    e.addProjectInputContainer.style.display = 'none';
     addProject.style.display = 'flex';
   });
 

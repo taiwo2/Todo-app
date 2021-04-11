@@ -1,8 +1,9 @@
 function project(id, title) {
   return {
-    id: id,
-    title: title,
+    id,
+    title
   };
 }
   
 export default project;
+  

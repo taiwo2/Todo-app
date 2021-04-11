@@ -1,5 +1,5 @@
 import storage from '../storage';
-// import displayController from '../displayController';
+import displayController from '../displayController';
 
 const editProject = (() => {
   const submitProjectEditHandler = (id) => {
