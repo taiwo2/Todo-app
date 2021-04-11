@@ -6,7 +6,7 @@ const editProject = (() => {
     const editProjectInput = document.getElementById('edit-project-input');
     const submitProjectEdit = document.getElementById('submit-project-edit');
 
-    submitProjectEdit.addEventListener('click', e => {
+    submitProjectEdit.addEventListener('click', (e) => {
       displayController.editProjectInArr(id, editProjectInput.value);
       storage.saveProjectToLocal();
 
@@ -36,7 +36,7 @@ const editProject = (() => {
     const getObj = JSON.parse(localStorage.getItem('myProjects'));
     const projectObj = getObj.filter(e => e.id === id);
 
-    exitProjectEdit.addEventListener('click', e => {
+    exitProjectEdit.addEventListener('click', (e) => {
       element.outerHTML = `
       <div class="project-group project-hover" data-id="${id}">
         <h3 class="project">${projectObj[0].title}</h3>

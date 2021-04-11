@@ -1,6 +1,6 @@
 import displayController from '../displayController';
 
-const viewTask = e => {
+const viewTask = (e) => {
   const viewTaskTitle = document.getElementById('view-task-title');
   const viewTaskDescription = document.getElementById('view-task-description');
   const viewDueDate = document.getElementById('view-due-date');
@@ -48,7 +48,7 @@ const viewTask = e => {
 
   // Exit modal
   const viewCancelButton = document.getElementById('view-cancel-button');
-  viewCancelButton.addEventListener('click', e => {
+  viewCancelButton.addEventListener('click', (e) => {
     viewTaskModal.style.display = 'none';
   });
 };

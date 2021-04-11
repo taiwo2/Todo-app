@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/taiwo2/Todo-app#readme",
   "devDependencies": {
+    "eslint-auto-fix": "^1.0.3",
     "webpack": "^5.31.2",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
