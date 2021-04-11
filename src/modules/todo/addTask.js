@@ -1,4 +1,4 @@
-import todo from './todo';
+import task from './todo';
 import displayController from '../displayController';
 import storage from '../storage';
 import project from '../project/project';
@@ -29,7 +29,7 @@ const addTask = e => {
   const date = format(new Date(year, month, day), 'MM-dd-yyyy');
 
   // Create a new task object
-  const newTask = todo(
+  const newTask = task(
     taskId,
     createTaskTitle,
     createTaskDescription,
@@ -91,8 +91,24 @@ const addTask = e => {
       </div>
       `
     );
+
+    displayController.addToProjectArr(newProject);
+    storage.saveProjectToLocal();
+    displayController.projectTrashHandler();
+    displayController.projectHandler();
+    displayController.editProjectHandler();
+    displayController.displayProjectButtonsOnHover();
   }
 
+  displayController.addToTaskArr(newTask);
+  displayController.trashHandler();
+  displayController.viewTaskHandler();
+  displayController.checkHandler();
+  displayController.editTaskHandler();
+  displayController.displayTaskButtonsOnHover();
+  storage.saveToLocal();
+
+  displayController.createTaskModal.style.display = 'none';
 };
 
 export default addTask;

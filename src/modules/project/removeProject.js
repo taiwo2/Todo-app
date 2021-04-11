@@ -1,4 +1,5 @@
 import displayController from '../displayController';
+import storage from '../storage';
 
 const removeProject = e => {
   const target = e.target;

@@ -1,4 +1,6 @@
 import displayController from '../displayController';
+import storage from '../storage';
+
 
 const deleteTask = e => {
   const target = e.target;

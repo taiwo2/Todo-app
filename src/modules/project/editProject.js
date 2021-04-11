@@ -1,3 +1,4 @@
+import storage from '../storage';
 import displayController from '../displayController';
 
 const editProject = (() => {

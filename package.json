@@ -19,8 +19,11 @@
   },
   "homepage": "https://github.com/taiwo2/Todo-app#readme",
   "devDependencies": {
-    "webpack": "^5.31.0",
+    "webpack": "^5.31.2",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "date-fns": "^2.20.1"
   }
 }

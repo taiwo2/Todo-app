@@ -1,4 +1,4 @@
-function todo(id, title, description, dueDate, project) {
+function task(id, title, description, dueDate, project) {
     return {
       id: id,
       title: title,
@@ -9,5 +9,5 @@ function todo(id, title, description, dueDate, project) {
     };
   }
   
-  export default todo;
+  export default task;
   
