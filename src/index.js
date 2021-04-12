@@ -1,7 +1,6 @@
-import todosDOM from './todos';
 import Projects from './Projects';
 import SVG from './svg';
-import barDOM from './call';
+import { barDOM, todosDOM } from './call';
 
    /* eslint-disable */
 
