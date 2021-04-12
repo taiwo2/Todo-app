@@ -36,9 +36,11 @@ const LocalDB = (() => {
   const removeToDos = (title) => {
     localStorage.removeItem(title);
   };
-
   return { 
-    saveProjects, getProjects, removeToDos, saveTodo, 
+    saveProjects, 
+    getProjects, 
+    removeToDos, 
+    saveTodo, 
   };
 })();
 

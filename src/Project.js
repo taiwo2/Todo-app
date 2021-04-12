@@ -7,17 +7,13 @@ const Project = (title, description) => {
     ToDos.push(ToDo(title, description, dueDate, priority, notes, checked));
   };
 
-  const getAllToDos = () => {
-    return ToDos;
-  };
+  const getAllToDos = () => ToDos;
 
   const removeToDo = (index) => {
     ToDos.splice(index, 1);
   };
 
-  const getToDo = (index) => {
-    return ToDos[index];
-  };
+  const getToDo = (index) => ToDos[index];
 
   const editToDo = (index, title, description, duedate, notes, priority) => {
     ToDos[index].title = title;
@@ -28,11 +24,11 @@ const Project = (title, description) => {
   };
 
   const changeCheckedToDo = (index, checked) => {
-    ToDos[index].checked = checked
+    ToDos[index].checked = checked;
   }
   return {
     title, description, addToDo, getAllToDos, removeToDo, getToDo, editToDo, changeCheckedToDo,
-  }
-}
+  };
+};
 
-export { Project }
+export default Project;

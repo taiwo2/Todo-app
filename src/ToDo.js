@@ -2,13 +2,9 @@ const ToDo = (title, description, duedate, priority, notes, checked) => {
   if (!(duedate instanceof Date)) {
     duedate = new Date(duedate);
   }
-
   const getDueDate = () => duedate;
-
   const setDueDate = (newDate) => duedate = newDate;
-
   const getChecked = () => checked;
-
   const changeCheck = () => {
     checked = !checked;
   };
