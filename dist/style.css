@@ -41,14 +41,13 @@ body {
 }
 
 .btn-aside {
-  margin: 1rem 0rem;
+  margin: 1rem;
   padding: 1rem;
   font-size: 0.9rem;
   background-color: #416165;
   color: white;
   border: none;
   cursor: pointer;
-  /* transition-duration: 200ms; */
 }
 
 .project-options {
@@ -79,6 +78,7 @@ body {
   cursor: pointer;
   transition-duration: 200ms;
 }
+
 #btnEditarToDo:hover {
   background-color: #acb0bd;
 }
@@ -88,7 +88,7 @@ body {
 }
 
 #btnDelete {
-  margin: 2rem 0rem;
+  margin: 2rem;
   padding: 0.8rem;
   font-size: 0.9rem;
   background-color: red;
@@ -103,7 +103,7 @@ body {
 }
 
 #btnBorrarToDo {
-  margin: 2rem 0rem;
+  margin: 2rem;
   padding: 0.8rem;
   font-size: 0.9rem;
   background-color: red;
@@ -140,9 +140,10 @@ body {
   background-color: #2abe0c;
   color: white;
 }
+
 .project {
   background-color: #acb0bd;
-  margin: 0.5rem 0rem;
+  margin: 0.5rem;
   padding: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
@@ -157,7 +158,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #acb0bd;
-  margin: 0.5rem 0rem;
+  margin: 0.5rem;
   padding: 0.5rem;
   font-size: 1rem;
 }
@@ -167,7 +168,7 @@ body {
 }
 
 label {
-  padding: 0.8rem 0rem;
+  padding: 0.8rem;
 }
 
 .form-add > input[type="text"] {
@@ -205,7 +206,7 @@ input:focus {
 }
 
 .bar:hover {
-  box-shadow: 0 0 0.5rem #000000;
+  box-shadow: 0 0 0.5rem #000;
 }
 
 .text-fixed {
@@ -270,7 +271,7 @@ input:focus {
 }
 
 #btnEditToDo {
-  margin: 1rem 0rem;
+  margin: 1rem;
 }
 
 .priority-radios {
@@ -280,7 +281,7 @@ input:focus {
 .child-radio {
   display: flex;
   flex-direction: column;
-  margin: 0rem 2rem 0rem 0rem;
+  margin-right: 2rem;
 }
 
 @media (max-width: 500px) {
@@ -288,12 +289,15 @@ input:focus {
     flex-direction: column;
     min-height: 100vh;
   }
+
   .projects {
     width: 100%;
   }
+
   .other-side {
     width: 100%;
   }
+  
   .project-options {
     font-size: 0.6rem;
   }
