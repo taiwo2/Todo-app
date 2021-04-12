@@ -1,26 +1,26 @@
 import { format, parse } from 'date-fns';
 import Projects from './Projects';
-import
- SVG from './svg';
+import SVG from './svg';
+import barDOM from './call'
 
 const ManipulateDOM = (() => {
   const putProjects = () => {
     const projectsDOM = document.querySelector('.list-projects');
     Projects.getAllProjects().forEach((project, index) => {
-      let projectDOM = document.createElement('div');
+    const projectDOM = document.createElement('div');
       projectDOM.dataset.id = index;
       projectDOM.classList.add('project');
-      let titleDOM = document.createElement('p');
+      const titleDOM = document.createElement('p');
       titleDOM.classList.add('title');
       titleDOM.textContent = project.title;
-      let descDOM = document.createElement('p');
+      const descDOM = document.createElement('p');
       descDOM.classList.add('description');
       descDOM.textContent = project.description;
       projectDOM.appendChild(titleDOM);
       projectDOM.appendChild(descDOM);
       projectDOM.addEventListener('click', () => {
-        let projectDetails = document.querySelector('.project-details');
-          let todos = document.querySelector('.todos');
+        const projectDetails = document.querySelector('.project-details');
+          const todos = document.querySelector('.todos');
           while (projectDetails.firstChild) {
               projectDetails.removeChild(projectDetails.lastChild);
           }
@@ -37,10 +37,10 @@ const ManipulateDOM = (() => {
   }
 
   const todosDOM = (index) => {
-    let todowrap = document.createElement('div');
+    const todowrap = document.createElement('div');
     todowrap.classList.add('todowrap');
     Projects.getProject(index).getAllToDos().forEach((ToDo, j) => {
-      let todo = document.createElement('div');
+      const todo = document.createElement('div');
       todo.classList.add('todo');
       switch (ToDo.priority.toLowerCase()) {
         case 'low': todo.classList.add('low-p'); break;
@@ -58,7 +58,7 @@ const ManipulateDOM = (() => {
       const pDescription = document.createElement('p');
       pDescription.classList.add('todo-description');
       pDescription.textContent = ToDo.description;
-      let pDate = document.createElement('p');
+      const pDate = document.createElement('p');
       pDate.classList.add('todo-date');
       pDate.textContent = format(ToDo.duedate, 'PPPP, HH:mm');
       const btnEdit = document.createElement('button');
@@ -108,34 +108,6 @@ const ManipulateDOM = (() => {
       return todowrap;
   }
 /* eslint-disable */
-
-  const barDOM = (index) => {
-      let bar = document.createElement("div");
-      bar.classList.add("bar");
-      let input = document.createElement("input");
-      input.type = "text";
-      input.classList.add("text-fixed");
-      let buttonAdd = document.createElement("button");
-      buttonAdd.classList.add("btn-fixed");
-      buttonAdd.textContent = "+";
-      bar.appendChild(input);
-      bar.appendChild(buttonAdd);
-      buttonAdd.addEventListener("click", () => {
-        if (input.value !== "") {
-            const todos = document.querySelector(".todos");
-            Projects.addToDoOnProject(index, input.value);
-            while (todos.firstChild) {
-                todos.removeChild(todos.lastChild);
-            }
-            todos.appendChild(todosDOM(index));
-            todos.appendChild(barDOM(index));
-        }
-        else {
-            input.placeholder = "You should introduce something here.";
-        }
-      })
-      return bar;
-  }
   const configTodoDOM = (index,j,ToDo) => {
       
       let todoConfig = document.createElement("div");
