@@ -41,17 +41,17 @@ const Projects = (() => {
     LocalDB.saveTodo(projects[indexProject].title,
       projects[indexProject].getAllToDos());
   };
-  const editToDofromProject = (indexProject, 
-    indexTodo, 
-    title, 
+  const editToDofromProject = (indexProject,
+    indexTodo,
+    title,
     description, duedate, notes, priority) => {
-      projects[indexProject].editToDo(indexTodo, 
+    projects[indexProject].editToDo(indexTodo,
       title,
       description,
       duedate,
       notes,
       priority);
-      LocalDB.saveTodo(projects[indexProject].title, projects[indexProject].getAllToDos());
+    LocalDB.saveTodo(projects[indexProject].title, projects[indexProject].getAllToDos());
   };
   const changeCheck = (indexProject, indexToDo, checked) => {
     projects[indexProject].changeCheckedToDo(indexToDo, checked);

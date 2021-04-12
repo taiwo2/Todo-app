@@ -1,4 +1,4 @@
- /* eslint-disable */
+/* eslint-disable */
 
 import { format, parse } from 'date-fns';
 import Projects from './Projects';
