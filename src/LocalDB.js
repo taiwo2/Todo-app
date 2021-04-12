@@ -1,9 +1,9 @@
-import { Project } from './Project';
+import Project from './Project';
 
 const LocalDB = (() => {
   const saveProjects = (projects) => {
     localStorage.setItem('projects', JSON.stringify(projects));
-  }
+  };
 
   const saveTodo = (title, ToDos) => {
     localStorage.setItem(title, JSON.stringify(ToDos));
@@ -35,9 +35,11 @@ const LocalDB = (() => {
 
   const removeToDos = (title) => {
     localStorage.removeItem(title);
-  }
+  };
 
-  return { saveProjects, getProjects, removeToDos, saveTodo }
+  return { 
+    saveProjects, getProjects, removeToDos, saveTodo,
+  }
 })();
 
-export { LocalDB };
+export default LocalDB;

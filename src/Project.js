@@ -1,4 +1,4 @@
-import { ToDo } from './ToDo';
+import ToDo from './ToDo';
 
 const Project = (title, description) => {
   const ToDos = [];
@@ -8,7 +8,7 @@ const Project = (title, description) => {
   };
 
   const getAllToDos = () => {
-    return ToDos;
+    ToDos;
   };
 
   const removeToDo = (index) => {
@@ -16,7 +16,7 @@ const Project = (title, description) => {
   };
 
   const getToDo = (index) => {
-    return ToDos[index];
+    ToDos[index];
   };
 
   const editToDo = (index, title, description, duedate, notes, priority) => {
@@ -29,8 +29,10 @@ const Project = (title, description) => {
 
   const changeCheckedToDo = (index, checked) => {
     ToDos[index].checked = checked;
-  }
-  return { title, description, addToDo, getAllToDos, removeToDo, getToDo, editToDo, changeCheckedToDo };
-}
+  };
+  return { 
+    title, description, addToDo, getAllToDos, removeToDo, getToDo, editToDo, changeCheckedToDo,
+  };
+};
 
 export default Project;
