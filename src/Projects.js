@@ -57,7 +57,7 @@ const Projects = (() => {
     projects[indexProject].changeCheckedToDo(indexToDo, checked);
     LocalDB.saveTodo(projects[indexProject].title, projects[indexProject].getAllToDos());
   };
-  return { 
+  return {
     addProject,
     getAllProjects,
     removeProject,
