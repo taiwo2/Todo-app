@@ -4,11 +4,9 @@
   "description": "> Todo list is a simple project for keeping track of your Todo's for different projects. by using this app you can create a new project and you can add your todos in specific project of your choice. ![Todo app](./todo.png)",
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack --mode development",
+    "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development --open",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix --ext .js,.jsx ."
+    "start": "webpack-dev-server --mode development --open" 
   },
   "repository": {
     "type": "git",

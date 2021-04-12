@@ -1,4 +1,3 @@
-/* eslint-disable */
 
 import { format, parse } from 'date-fns';
 import Projects from './Projects';
@@ -111,6 +110,7 @@ const ManipulateDOM = (() => {
       });
       return todowrap;
   }
+/* eslint-disable */
 
   const barDOM = (index) => {
       let bar = document.createElement("div");
@@ -320,6 +320,9 @@ const ManipulateDOM = (() => {
       wrap.appendChild(wrapbuttons);
       return wrap;
   }
+
+   /* eslint-disable */
+   
   const EditProjectDOM = (project, index) => {
       let form = document.createElement("div");
       form.classList.add("form-add");
@@ -440,4 +443,3 @@ const ManipulateDOM = (() => {
 
 ManipulateDOM.init();
 
- /* eslint-disable */
