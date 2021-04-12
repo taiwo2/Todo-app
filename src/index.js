@@ -47,10 +47,10 @@ const ManipulateDOM = (() => {
         case 'medium': todo.classList.add('medium-p'); break
         case 'high': todo.classList.add('high-p'); break
       }
-      const todo_info = document.createElement('div')
-      todo_info.classList.add('todo-info')
-      const todo_buttons = document.createElement('div')
-      todo_buttons.classList.add('todo-btns')
+      const todoInfo = document.createElement('div')
+      todoInfo.classList.add('todo-info')
+      const todoButtons = document.createElement('div')
+      todoButtons.classList.add('todo-btns')
       todo.dataset.id = j
       const pTitle = document.createElement('p')
       pTitle.classList.add('todo-title')
@@ -96,14 +96,14 @@ const ManipulateDOM = (() => {
         todos.appendChild(todosDOM(index))
         todos.appendChild(barDOM(index))
       })
-      todo_buttons.appendChild(btnEdit)
-      todo_buttons.appendChild(btnDelete)
-      todo_buttons.appendChild(checkbox)
-      todo_info.appendChild(pTitle)
-      todo_info.appendChild(pDescription)
-      todo_info.appendChild(pDate)
-      todo.appendChild(todo_info)
-      todo.appendChild(todo_buttons)
+      todoButtons.appendChild(btnEdit)
+      todoButtons.appendChild(btnDelete)
+      todoButtons.appendChild(checkbox)
+      todoInfo.appendChild(pTitle)
+      todoInfo.appendChild(pDescription)
+      todoInfo.appendChild(pDate)
+      todo.appendChild(todoInfo)
+      todo.appendChild(todoButtons)
       todowrap.appendChild(todo)
     })
     return todowrap
