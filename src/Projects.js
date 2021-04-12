@@ -31,23 +31,26 @@ const Projects = (() => {
 
   const getProject = (index) => projects[index];
   const removeProject = (index) => {
-      LocalDB.removeToDos(projects[index].title);
-      projects.splice(index, 1);
-      LocalDB.saveProjects(projects);
+    LocalDB.removeToDos(projects[index].title);
+    projects.splice(index, 1);
+    LocalDB.saveProjects(projects);
   };
 
   const deleteToDofromProject = (indexProject, indexToDo) => {
     projects[indexProject].removeToDo(indexToDo);
-    LocalDB.saveTodo(projects[indexProject].title, 
-    projects[indexProject].getAllToDos());
+    LocalDB.saveTodo(projects[indexProject].title,
+      projects[indexProject].getAllToDos());
   };
-  const editToDofromProject = (indexProject, indexTodo, title, description, duedate, notes, priority) => {
+  const editToDofromProject = (indexProject, 
+    indexTodo, 
+    title, 
+    description, duedate, notes, priority) => {
       projects[indexProject].editToDo(indexTodo, 
-        title, 
-        description, 
-        duedate, 
-        notes, 
-        priority);
+      title,
+      description,
+      duedate,
+      notes,
+      priority);
       LocalDB.saveTodo(projects[indexProject].title, projects[indexProject].getAllToDos());
   };
   const changeCheck = (indexProject, indexToDo, checked) => {
@@ -55,15 +58,15 @@ const Projects = (() => {
     LocalDB.saveTodo(projects[indexProject].title, projects[indexProject].getAllToDos());
   };
   return { 
-    addProject, 
-    getAllProjects, 
-    removeProject, 
-    editProject, 
+    addProject,
+    getAllProjects,
+    removeProject,
+    editProject,
     getProject,
-    addToDoOnProject, 
-    deleteToDofromProject, 
-    editToDofromProject, 
-    changeCheck 
+    addToDoOnProject,
+    deleteToDofromProject,
+    editToDofromProject,
+    changeCheck,
   };
 })();
 

@@ -25,7 +25,7 @@ const Project = (title, description) => {
 
   const changeCheckedToDo = (index, checked) => {
     ToDos[index].checked = checked;
-  }
+  };
   return {
     title, description, addToDo, getAllToDos, removeToDo, getToDo, editToDo, changeCheckedToDo,
   };
