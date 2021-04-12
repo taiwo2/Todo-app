@@ -1,12 +1,14 @@
 {
   "name": "todo",
   "version": "1.0.0",
-  "description": "",
+  "description": "> Todo list is a simple project for keeping track of your Todo's for different projects. by using this app you can create a new project and you can add your todos in specific project of your choice. ![Todo app](./todo.png)",
   "main": "index.js",
   "scripts": {
     "build:dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development --open"
+    "start": "webpack serve --mode development --open",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
   },
   "repository": {
     "type": "git",
@@ -19,7 +21,11 @@
   },
   "homepage": "https://github.com/taiwo2/Todo-app#readme",
   "devDependencies": {
-    "eslint-auto-fix": "^1.0.3",
+    "eslint": "^7.24.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
     "webpack": "^5.31.2",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
