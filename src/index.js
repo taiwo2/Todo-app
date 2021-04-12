@@ -1,6 +1,50 @@
 import { format, parse } from 'date-fns';
-import  Projects  from './Projects';
-import SVG  from './svg';
+import Projects from './Projects';
+import SVG from './svg';
+
+const EditProjectDOM = (project, index) => {
+  const form = document.createElement('div');
+  form.classList.add('form-add');
+  const txtTitle = document.createElement('input');
+  const lblTitle = document.createElement('label');
+  lblTitle.htmlFor = 'txtTitle';
+  lblTitle.textContent = 'Title:';
+  const lblDescription = document.createElement('label');
+  lblDescription.htmlFor = 'txtDescription';
+  lblDescription.textContent = 'Description:';
+  txtTitle.type = 'text';
+  txtTitle.id = 'txtTitle';
+  txtTitle.value = project.title;
+  const txtDescription = document.createElement('input');
+  txtDescription.type = 'text';
+  txtDescription.id = 'txtDesc';
+  txtDescription.value = project.description;
+  const btnSubmit = document.createElement('button');
+  btnSubmit.textContent = 'Edit';
+  btnSubmit.classList.add('btn-aside');
+  const Error = document.createElement('p');
+  Error.classList.add('hidden');
+  Error.classList.add('error');
+  form.appendChild(lblTitle);
+  form.appendChild(txtTitle);
+  form.appendChild(lblDescription);
+  form.appendChild(txtDescription);
+  form.appendChild(btnSubmit);
+  form.appendChild(Error);
+  btnSubmit.addEventListener('click', () => {
+    if (txtTitle.value !== '' && txtDescription.value !== '') {
+      Projects.editProject(index, txtTitle.value, txtDescription.value);
+      reloadProjects();
+      document.querySelector('#btnBackProject').classList.add('hidden');
+      document.querySelector('#btnAddProject').classList.remove('hidden');
+    } else {
+      Error.textContent = 'ERROR: Fields are still empty';
+      Error.classList.remove('hidden');
+    }
+  });
+
+  return form;
+};
 
 const ProjectFieldsDOM = (project, index) => {
   const wrap = document.createElement('div');
@@ -348,51 +392,7 @@ const ManipulateDOM = (() => {
     });
   };
 
-  
-  
-  const EditProjectDOM = (project, index) => {
-    const form = document.createElement('div');
-    form.classList.add('form-add');
-    const txtTitle = document.createElement('input');
-    const lblTitle = document.createElement('label');
-    lblTitle.htmlFor = 'txtTitle';
-    lblTitle.textContent = 'Title:';
-    const lblDescription = document.createElement('label');
-    lblDescription.htmlFor = 'txtDescription';
-    lblDescription.textContent = 'Description:';
-    txtTitle.type = 'text';
-    txtTitle.id = 'txtTitle';
-    txtTitle.value = project.title;
-    const txtDescription = document.createElement('input');
-    txtDescription.type = 'text';
-    txtDescription.id = 'txtDesc';
-    txtDescription.value = project.description;
-    const btnSubmit = document.createElement('button');
-    btnSubmit.textContent = 'Edit';
-    btnSubmit.classList.add('btn-aside');
-    const Error = document.createElement('p');
-    Error.classList.add('hidden');
-    Error.classList.add('error');
-    form.appendChild(lblTitle);
-    form.appendChild(txtTitle);
-    form.appendChild(lblDescription);
-    form.appendChild(txtDescription);
-    form.appendChild(btnSubmit);
-    form.appendChild(Error);
-    btnSubmit.addEventListener('click', () => {
-      if (txtTitle.value !== '' && txtDescription.value !== '') {
-        Projects.editProject(index, txtTitle.value, txtDescription.value);
-        reloadProjects();
-        document.querySelector('#btnBackProject').classList.add('hidden');
-        document.querySelector('#btnAddProject').classList.remove('hidden');
-      } else {
-        Error.textContent = 'ERROR: Fields are still empty';
-        Error.classList.remove('hidden');
-      }
-    });
-
-    return form;
-  };
+  putProjects();
 
   const createNewProjectDOM = () => {
     const form = document.createElement('div');

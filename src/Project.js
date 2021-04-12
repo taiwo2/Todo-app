@@ -8,7 +8,7 @@ const Project = (title, description) => {
   };
 
   const getAllToDos = () => {
-    ToDos;
+    return ToDos;
   };
 
   const removeToDo = (index) => {
@@ -16,7 +16,7 @@ const Project = (title, description) => {
   };
 
   const getToDo = (index) => {
-    ToDos[index];
+    return ToDos[index];
   };
 
   const editToDo = (index, title, description, duedate, notes, priority) => {
@@ -25,14 +25,14 @@ const Project = (title, description) => {
     ToDos[index].duedate = duedate;
     ToDos[index].notes = notes;
     ToDos[index].priority = priority;
-  }
+  };
 
   const changeCheckedToDo = (index, checked) => {
-    ToDos[index].checked = checked;
-  };
-  return { 
+    ToDos[index].checked = checked
+  }
+  return {
     title, description, addToDo, getAllToDos, removeToDo, getToDo, editToDo, changeCheckedToDo,
-  };
-};
+  }
+}
 
-export default Project;
+export { Project }

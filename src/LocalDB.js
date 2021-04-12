@@ -38,8 +38,8 @@ const LocalDB = (() => {
   };
 
   return { 
-    saveProjects, getProjects, removeToDos, saveTodo,
-  }
+    saveProjects, getProjects, removeToDos, saveTodo, 
+  };
 })();
 
 export default LocalDB;
