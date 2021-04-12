@@ -163,9 +163,6 @@ const configTodoDOM = (index, j, ToDo) => {
   return todoConfig;
 };
 
-import { format } from 'date-fns';
-import configTodoDOM from './call';
-
 const todosDOM = (index) => {
   const todowrap = document.createElement('div');
   todowrap.classList.add('todowrap');
@@ -237,6 +234,6 @@ const todosDOM = (index) => {
     todowrap.appendChild(todo);
     });
     return todowrap;
-  };
+};
 
 export { barDOM, configTodoDOM, todosDOM };
