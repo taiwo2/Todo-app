@@ -1,4 +1,7 @@
 import { format, parse } from 'date-fns';
+import Projects from './Projects';
+import todosDOM from './Projects';
+
 
 const barDOM = (index) => {
   const bar = document.createElement('div');
@@ -20,19 +23,16 @@ const barDOM = (index) => {
       }
       todos.appendChild(todosDOM(index));
       todos.appendChild(barDOM(index));
-    }
-    else {
-        input.placeholder = 'You should introduce something here.';
-    }
-  })
+    }else {
+      input.placeholder = 'You should introduce something here.';
+    };
+  });
   return bar;
 }
-
-const configTodoDOM = (index,j,ToDo) => {
+const configTodoDOM = (index, j, ToDo) => {
   const todoConfig = document.createElement('div');
   todoConfig.classList.add('todo-config');
   todoConfig.classList.add('todo');
-  
   const inputTitle = document.createElement('input');
   inputTitle.classList.add('todo-input');
   inputTitle.value = ToDo.title;
@@ -62,29 +62,29 @@ const configTodoDOM = (index,j,ToDo) => {
   LowPriority.classList.add('child-radio');
   const MedPriority = document.createElement('div');
   MedPriority.classList.add('child-radio');
-  const HighPriority = document.createElement("div");
+  const HighPriority = document.createElement('div');
   HighPriority.classList.add('child-radio');
   const radioLowPriority = document.createElement('input');
   radioLowPriority.type = 'radio';
   radioLowPriority.name = 'priority';
   radioLowPriority.id = 'rdLow';
   radioLowPriority.value = 'Low';
-  const lblLowPriority = document.createElement("label");
+  const lblLowPriority = document.createElement('label');
   lblLowPriority.textContent = 'Low:';
-  lblLowPriority.htmlFor = 'rdLow'; 
+  lblLowPriority.htmlFor = 'rdLow';
   LowPriority.appendChild(lblLowPriority);
   LowPriority.appendChild(radioLowPriority);
   radioLowPriority.addEventListener('click', (e) => {
-    if(e.target.checked){
-        todoConfig.classList.remove('high-p');
-        todoConfig.classList.remove('medium-p');
-        todoConfig.classList.add('low-p');
-        selection = radioLowPriority.value;
+    if (e.target.checked) {
+      todoConfig.classList.remove('high-p');
+      todoConfig.classList.remove('medium-p');
+      todoConfig.classList.add('low-p');
+      selection = radioLowPriority.value;
     }
   });
   const radioMedPriority = document.createElement('input');
   radioMedPriority.type = 'radio';
-  radioMedPriority.name = "priority";
+  radioMedPriority.name = 'priority';
   radioMedPriority.id = 'rdMed';
   radioMedPriority.value = 'Medium';
   const lblMedPriority = document.createElement('label');
@@ -93,11 +93,11 @@ const configTodoDOM = (index,j,ToDo) => {
   MedPriority.appendChild(lblMedPriority);
   MedPriority.appendChild(radioMedPriority);
   radioMedPriority.addEventListener('click', (e)=>{
-    if(e.target.checked){
-        todoConfig.classList.remove('high-p');
-        todoConfig.classList.remove('low-p');
-        todoConfig.classList.add('medium-p');
-        selection = radioMedPriority.value;    
+    if (e.target.checked) {
+      odoConfig.classList.remove('high-p');
+      odoConfig.classList.remove('low-p');
+      odoConfig.classList.add('medium-p');
+      election = radioMedPriority.value;
     }
   });
   const radioHighPriority = document.createElement('input');
@@ -107,15 +107,15 @@ const configTodoDOM = (index,j,ToDo) => {
   radioHighPriority.value = 'High';
   const lblHighPriority = document.createElement('label');
   lblHighPriority.textContent = 'High:';
-  lblHighPriority.htmlFor = 'rdLow'; 
+  lblHighPriority.htmlFor = 'rdLow';
   HighPriority.appendChild(lblHighPriority);
   HighPriority.appendChild(radioHighPriority);
   radioHighPriority.addEventListener('click', (e)=>{
-    if(e.target.checked){
-        todoConfig.classList.remove('low-p');
-        todoConfig.classList.remove('medium-p');    
-        todoConfig.classList.add('high-p');
-        selection = radioHighPriority.value;
+    if (e.target.checked) {
+      todoConfig.classList.remove('low-p');
+      todoConfig.classList.remove('medium-p');    
+      todoConfig.classList.add('high-p');
+      selection = radioHighPriority.value;
     }
   });
   radios.appendChild(LowPriority);
@@ -125,16 +125,16 @@ const configTodoDOM = (index,j,ToDo) => {
     case 'low': todoConfig.classList.add('low-p');radioLowPriority.checked = true; selection = radioLowPriority.value; break;
     case 'medium': todoConfig.classList.add('medium-p');radioMedPriority.checked = true;
     selection = radioMedPriority.value; break;
-    case 'high': todoConfig.classList.add('high-p');radioHighPriority.checked = true; 
+    case 'high': todoConfig.classList.add('high-p'); radioHighPriority.checked = true; 
     selection = radioHighPriority.value; break;
+    default: null;
   }
-  
   btnSubmit.addEventListener('click', ()=>{
-    if(inputTitle.value !== '' && inputDesc.value !== '' && inputDate.value !== '' && inputNotes.value !== ''){
+    if (inputTitle.value !== '' && inputDesc.value !== '' && inputDate.value !== '' && inputNotes.value !== '') {
       Projects.editToDofromProject(index, j, inputTitle.value, inputDesc.value, parse(inputDate.value,"yyyy-MM-dd'T'HH:mm", new Date()),inputNotes.value, selection);
       const todos = document.querySelector('.todos');
       while (todos.firstChild) {
-          todos.removeChild(todos.lastChild);
+        todos.removeChild(todos.lastChild);
       }
       todos.appendChild(todosDOM(index));
       todos.appendChild(barDOM(index));
@@ -163,6 +163,6 @@ const configTodoDOM = (index,j,ToDo) => {
   todoConfig.appendChild(radios);
   todoConfig.appendChild(btnSubmit);
   return todoConfig;
-}
+};
 
-export { barDOM, configTodoDOM }
+export { barDOM, configTodoDOM };
