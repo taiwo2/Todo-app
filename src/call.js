@@ -52,10 +52,10 @@ const configTodoDOM = (index,j,ToDo) => {
   inputNotes.rows = 5;
   inputNotes.id = 'inputNotes';
   inputNotes.value = ToDo.notes;
-  const btnSubmit = document.createElement('button');
+  let btnSubmit = document.createElement('button');
   btnSubmit.id = 'btnEditToDo';
   btnSubmit.textContent = 'Submit';
-  const selection;
+  let selection;
   const radios = document.createElement('div');
   radios.classList.add('priority-radios');
   const LowPriority = document.createElement('div');
