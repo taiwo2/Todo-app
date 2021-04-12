@@ -1,7 +1,7 @@
-import todosDOM from './Projects';
+import todosDOM from './todos';
 import Projects from './Projects';
 import SVG from './svg';
-import { barDOM, configTodoDOM } from './call';
+import barDOM from './call';
 
 const ManipulateDOM = (() => {
   const putProjects = () => {
@@ -34,8 +34,6 @@ const ManipulateDOM = (() => {
       projectsDOM.appendChild(projectDOM);
     });
   };
-
- 
 
 /* eslint-disable */
 

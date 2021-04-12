@@ -1,6 +1,6 @@
 import { format, parse } from 'date-fns';
 import Projects from './Projects';
-import todosDOM from './Projects';
+import todosDOM from './todos';
 
 
 const barDOM = (index) => {
@@ -23,12 +23,12 @@ const barDOM = (index) => {
       }
       todos.appendChild(todosDOM(index));
       todos.appendChild(barDOM(index));
-    }else {
+    } else {
       input.placeholder = 'You should introduce something here.';
-    };
+    }
   });
   return bar;
-}
+};
 const configTodoDOM = (index, j, ToDo) => {
   const todoConfig = document.createElement('div');
   todoConfig.classList.add('todo-config');
@@ -46,13 +46,13 @@ const configTodoDOM = (index, j, ToDo) => {
   const inputDate = document.createElement('input');
   inputDate.classList.add('todo-input');
   inputDate.type = 'datetime-local';
-  inputDate.value = format(ToDo.duedate, `yyyy-MM-dd'T'HH:mm`);
+  inputDate.value = format(ToDo.duedate, "yyyy-MM-dd'T'HH:mm");
   inputDate.id = 'inputDate';
   const inputNotes = document.createElement('textarea');
   inputNotes.rows = 5;
   inputNotes.id = 'inputNotes';
   inputNotes.value = ToDo.notes;
-  let btnSubmit = document.createElement('button');
+  const btnSubmit = document.createElement('button');
   btnSubmit.id = 'btnEditToDo';
   btnSubmit.textContent = 'Submit';
   let selection;
@@ -89,15 +89,15 @@ const configTodoDOM = (index, j, ToDo) => {
   radioMedPriority.value = 'Medium';
   const lblMedPriority = document.createElement('label');
   lblMedPriority.textContent = 'Medium:';
-  lblMedPriority.htmlFor = 'rdMed'; 
+  lblMedPriority.htmlFor = 'rdMed';
   MedPriority.appendChild(lblMedPriority);
   MedPriority.appendChild(radioMedPriority);
-  radioMedPriority.addEventListener('click', (e)=>{
+  radioMedPriority.addEventListener('click', (e) => {
     if (e.target.checked) {
-      odoConfig.classList.remove('high-p');
-      odoConfig.classList.remove('low-p');
-      odoConfig.classList.add('medium-p');
-      election = radioMedPriority.value;
+      todoConfig.classList.remove('high-p');
+      todoConfig.classList.remove('low-p');
+      todoConfig.classList.add('medium-p');
+      telection = radioMedPriority.value;
     }
   });
   const radioHighPriority = document.createElement('input');
@@ -110,10 +110,10 @@ const configTodoDOM = (index, j, ToDo) => {
   lblHighPriority.htmlFor = 'rdLow';
   HighPriority.appendChild(lblHighPriority);
   HighPriority.appendChild(radioHighPriority);
-  radioHighPriority.addEventListener('click', (e)=>{
+  radioHighPriority.addEventListener('click', (e) => {
     if (e.target.checked) {
       todoConfig.classList.remove('low-p');
-      todoConfig.classList.remove('medium-p');    
+      todoConfig.classList.remove('medium-p');
       todoConfig.classList.add('high-p');
       selection = radioHighPriority.value;
     }
@@ -125,20 +125,20 @@ const configTodoDOM = (index, j, ToDo) => {
     case 'low': todoConfig.classList.add('low-p');radioLowPriority.checked = true; selection = radioLowPriority.value; break;
     case 'medium': todoConfig.classList.add('medium-p');radioMedPriority.checked = true;
     selection = radioMedPriority.value; break;
-    case 'high': todoConfig.classList.add('high-p'); radioHighPriority.checked = true; 
-    selection = radioHighPriority.value; break;
+    case 'high': todoConfig.classList.add('high-p'); radioHighPriority.checked = true;
+      selection = radioHighPriority.value; break;
     default: null;
   }
-  btnSubmit.addEventListener('click', ()=>{
+  btnSubmit.addEventListener('click', () => {
     if (inputTitle.value !== '' && inputDesc.value !== '' && inputDate.value !== '' && inputNotes.value !== '') {
-      Projects.editToDofromProject(index, j, inputTitle.value, inputDesc.value, parse(inputDate.value,"yyyy-MM-dd'T'HH:mm", new Date()),inputNotes.value, selection);
+      Projects.editToDofromProject(index, j, inputTitle.value, inputDesc.value, parse(inputDate.value,"yyyy-MM-dd'T'HH:mm", new Date()), inputNotes.value, selection);
       const todos = document.querySelector('.todos');
       while (todos.firstChild) {
         todos.removeChild(todos.lastChild);
       }
       todos.appendChild(todosDOM(index));
       todos.appendChild(barDOM(index));
-     }
+    }
   });
   const lblTitle = document.createElement('label');
   lblTitle.textContent = 'Title:';
