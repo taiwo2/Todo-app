@@ -2,6 +2,7 @@ import { format, parse } from 'date-fns';
 import Projects from './Projects';
 import SVG from './svg';
 
+/* eslint-disable */
 
 const todosDOM = (index) => {
   const todowrap = document.createElement('div');
@@ -72,9 +73,12 @@ const todosDOM = (index) => {
     todo.appendChild(todoInfo);
     todo.appendChild(todoButtons);
     todowrap.appendChild(todo);
-    });
-    return todowrap;
+  });
+  return todowrap;
 };
+
+/* eslint-disable */
+
 const barDOM = (index) => {
   const bar = document.createElement('div');
   bar.classList.add('bar');
@@ -91,10 +95,10 @@ const barDOM = (index) => {
       const todos = document.querySelector('.todos');
       Projects.addToDoOnProject(index, input.value);
       while (todos.firstChild) {
-        todos.removeChild(todos.lastChild);
+      todos.removeChild(todos.lastChild);
       }
-        todos.appendChild(todosDOM(index));
-        todos.appendChild(barDOM(index));
+      todos.appendChild(todosDOM(index));
+      todos.appendChild(barDOM(index));
     } else {
       input.placeholder = 'You should introduce something here.';
     }
