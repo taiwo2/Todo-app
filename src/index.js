@@ -2,7 +2,7 @@ import Projects from './Projects';
 import SVG from './svg';
 import { barDOM, todosDOM } from './call';
 
-   /* eslint-disable */
+/* eslint-disable */
 
 const ManipulateDOM = (() => {
   const putProjects = () => {
