@@ -30,6 +30,5 @@ const Project = (title, description) => {
   return {
     title, description, addToDo, getAllToDos, removeToDo, getToDo, editToDo, changeCheckedToDo,
   };
-};
-
+}();
 export default Project;

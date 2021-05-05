@@ -1,4 +1,4 @@
-import { Project } from '../src/Project';
+import { ToDo, Project, getAllToDos } from '../src/Project';
 
 const kProject = Project('tahiw', 'ww');
 describe('tests for todoController', () => {
