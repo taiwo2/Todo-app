@@ -1,9 +1,9 @@
+/* eslint-disable */
+
 import {  Project } from '../src/Project';
 import ToDo from '../src/ToDo';
 
-/* eslint-disable */
-
-const getAllToDos = () => ToDos;
+getAllToDos();
 
 const kProject = Project('tahiw', 'ww');
 describe('tests for todoController', () => {
