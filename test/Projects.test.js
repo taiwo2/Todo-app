@@ -8,14 +8,14 @@ describe('tests to AddProject', () => {
   });
 });
 describe('tests to EditProject', () => {
-    test('should add todo for a project', () => {
-      const projectAdd = Projects.editProject(0, 'tawih', 'ww');
-      expect(projectAdd).toBe(projectAdd);
-    });
+  test('should add todo for a project', () => {
+    const projectAdd = Projects.editProject(0, 'tawih', 'ww');
+    expect(projectAdd).toBe(projectAdd);
+  });
 });
 describe('tests to AddProjectTodo', () => {
   test('should add todo for a project', () => {
-    const AddTodo = Projects.removeProject (0,'tawih', 'ww');
+    const AddTodo = Projects.removeProject(0,'tawih', 'ww');
     expect(AddTodo).toBe(AddTodo);
   });
 });
