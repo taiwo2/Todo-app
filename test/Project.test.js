@@ -27,3 +27,17 @@ describe('tests to EditTodo', () => {
     expect(todos.length).not.toBeNull();
   });
 });
+describe('tests to removeToDo ', () => {
+  test('should add todo for a project', () => {
+    kProject.removeToDo(0, '2wwww', 'zzz', 'Sunday', 'April 11th, 2021, 22:50', null, true);
+    const todos = ToDo('2wwww', 'zzz', 'Sunday', 'April 11th, 2021, 22:50', null, true);
+    expect(todos.length).not.toBeNull();
+  });
+});
+describe('tests to changeCheckedToDo ', () => {
+  test('should add todo for a project', () => {
+    kProject.changeCheckedToDo(0, true);
+    const todos = ToDo('2wwww', 'zzz', 'Sunday', 'April 11th, 2021, 22:50', null, true);
+    expect(todos.length).not.toBeNull();
+  });
+});
