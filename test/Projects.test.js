@@ -3,9 +3,6 @@ import Projects from '../src/Projects';
 import addProject from '../src/Projects'
 import addToDo from '../src/Project';
 
-// beforeAll(() => {
-//     Projects();
-//   });
 describe('tests to AddProject', () => {
   test('should add todo for a project', () => {
         const projectAdd =Projects.addProject('tawih','ww');
@@ -15,23 +12,23 @@ describe('tests to AddProject', () => {
 })
 describe('tests to EditProject', () => {
     test('should add todo for a project', () => {
-          const projectAdd =Projects.editProject(0,'tawih','ww');
+        const projectAdd =Projects.editProject(0,'tawih','ww');
       expect(projectAdd).toBe(projectAdd);
   
-      });
+    });
   })
   describe('tests to AddProjectTodo', () => {
     test('should add todo for a project', () => {
-          const AddTodo =Projects.removeProject (0,'tawih','ww');
+        const AddTodo =Projects.removeProject (0,'tawih','ww');
       expect(AddTodo).toBe(AddTodo);
   
-      });
+    });
   })
-  describe('tests to GetAllProject', () => {
+describe('tests to GetAllProject', () => {
     test('should add todo for a project', () => {
-          const getAllProject =Projects.getAllProjects() ;
+        const getAllProject =Projects.getAllProjects() ;
       expect(getAllProject).toBe(getAllProject);
   
-      });
-  })
+    });
+})
   

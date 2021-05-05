@@ -8,7 +8,7 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open",
-    "watch-jest": "jest --watch"
+    "watch-jest": "jest --watchAll --passWithNoTests"
   },
   "repository": {
     "type": "git",
