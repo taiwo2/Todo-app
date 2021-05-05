@@ -25,10 +25,10 @@ const Project = (title, description) => {
   };
 
   const changeCheckedToDo = (index, checked) => {
-    if (ToDos[index] = checked){
-      checked
-    }else{
-      !checked
+    if (ToDos[index] = checked) {
+      return checked;
+    } else {
+      return !checked;
     }
   };
   return {
