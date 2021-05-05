@@ -9,7 +9,7 @@ describe('tests to GetAllProject', () => {
 });
 describe('tests to GetAllProject', () => {
   test('should add todo for a project', () => {
-    const getAllProject =sveg.editBtn();
+    const getAllProject = sveg.editBtn();
     expect(getAllProject).toBe(getAllProject);
   });
 });

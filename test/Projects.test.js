@@ -15,7 +15,7 @@ describe('tests to EditProject', () => {
 });
 describe('tests to AddProjectTodo', () => {
   test('should add todo for a project', () => {
-    const AddTodo = Projects.removeProject(0,'tawih', 'ww');
+    const AddTodo = Projects.removeProject(0, 'tawih', 'ww');
     expect(AddTodo).toBe(AddTodo);
   });
 });
