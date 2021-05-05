@@ -1,9 +1,8 @@
 /* eslint-disable */
 
-import {  Project } from '../src/Project';
+import Project from '../src/Project';
 import ToDo from '../src/ToDo';
 
-getAllToDos();
 
 const kProject = Project('tahiw', 'ww');
 describe('tests for todoController', () => {
