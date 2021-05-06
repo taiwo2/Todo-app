@@ -1,6 +1,5 @@
 import ToDo from './ToDo';
 
-
 const Project = (title, description) => {
   const ToDos = [];
 
@@ -13,7 +12,7 @@ const Project = (title, description) => {
   const removeToDo = (index) => {
     ToDos.splice(index, 1);
   };
-  
+
 /* eslint-disable */
 
   const getToDo = (index) => ToDos[index];
