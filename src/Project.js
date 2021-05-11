@@ -13,6 +13,8 @@ const Project = (title, description) => {
     ToDos.splice(index, 1);
   };
 
+/* eslint-disable */
+
   const getToDo = (index) => ToDos[index];
 
   const editToDo = (index, title, description, duedate, notes, priority) => {
@@ -24,11 +26,15 @@ const Project = (title, description) => {
   };
 
   const changeCheckedToDo = (index, checked) => {
-    ToDos[index].checked = checked;
+    if (ToDos[index] = checked) {
+      return checked;
+    } else {
+      return !checked;
+    }
   };
   return {
     title, description, addToDo, getAllToDos, removeToDo, getToDo, editToDo, changeCheckedToDo,
   };
 };
-
+Project();
 export default Project;
